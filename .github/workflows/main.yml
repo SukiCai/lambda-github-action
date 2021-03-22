@@ -27,5 +27,5 @@ jobs:
       - name: deploy
         run: |
           npx ncc build index.ts
-          zip -j deploy.zip ./index.js
+          zip -j deploy.zip ./dist/*
           aws lambda update-function-code --function-name=lambda-github-action-temp --zip-file=fileb://deploy.zip
